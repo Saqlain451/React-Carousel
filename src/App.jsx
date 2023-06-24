@@ -27,6 +27,15 @@ const App = () => {
     },
   };
 
+  const carouselConfig = {
+    responsive: responsive,
+    itemClass: 'carousel-item-padding-40-px', // Adjust the gap between items
+    containerClass: 'carousel-container',
+    keyBoardControl:true,
+    draggable:true,
+    showDots : true,
+  };
+
   const getApiData = async () => {
     try {
       const data = await axios.get(url);
@@ -48,7 +57,7 @@ const App = () => {
       <div className="container">
     
 
-        <Carousel showDots={true} responsive={responsive} keyBoardControl={true} draggable={true} autoPlaySpeed={1000}>
+        <Carousel {...carouselConfig}>
           {allData.map((courses) => {
             const { title, img, description, _id } = courses;
             const des = getShorte(description);

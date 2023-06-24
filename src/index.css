@@ -13,3 +13,7 @@ body{
   grid-template-columns: repeat(4,1fr);
 
 }
+
+.carousel-item-padding-40-px {
+  padding: 0 10px; /* Adjust the value to increase or decrease the gap */
+}
