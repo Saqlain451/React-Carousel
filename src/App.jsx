@@ -15,7 +15,7 @@ const App = () => {
     },
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 3,
+      items: 4,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
@@ -46,15 +46,16 @@ const App = () => {
   return (
     <>
       <div className="container">
-        <Carousel showDots={true} responsive={responsive}>
+    
+
+        <Carousel showDots={true} responsive={responsive} keyBoardControl={true} draggable={true} autoPlaySpeed={1000}>
           {allData.map((courses) => {
-            // console.log(courses)
             const { title, img, description, _id } = courses;
             const des = getShorte(description);
             return <Card img={img} title={title} key={_id} description={des} />;
           })}
         </Carousel>
-      </div>
+        </div>
     </>
   );
 };
